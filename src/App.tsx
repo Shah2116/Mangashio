@@ -1,36 +1,39 @@
 
- import React, {useState}  from 'react'
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import SignIn from './components/SignIn';
-import Register from './components/Register';
+import SignIn from './screens/SignIn';
+import Register from './screens/Register';
+import Home from './screens/Home';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
-  const [hideSplashScreen, setHideSplashScreen] = useState()
+ 
 
   return (
     <>
-      <NavigationContainer>
-        {hideSplashScreen ? (
-          <Stack.Navigator
-            initialRouteName="Register"
-            screenOptions={{ headerShown: false }}
-          >
-            <Stack.Screen
-              name="SignIn"
-              component={SignIn}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Register"
-              component={Register}
-              options={{ headerShown: false }}
-            />
-          </Stack.Navigator>
-        ) : null}
-      </NavigationContainer>
+     <NavigationContainer>
+      <Stack.Navigator initialRouteName='Register'>
+        <Stack.Screen 
+        name='SignIn'
+        component={SignIn}
+        options={{
+          headerShown: false
+        }}/>
+        <Stack.Screen 
+        name='Register'
+        component={Register}
+        options={{
+          headerShown: false
+        }}/>
+         <Stack.Screen 
+        name='Home'
+        component={Home}
+        options={{
+          headerShown: false
+        }}/>
+      </Stack.Navigator>
+     </NavigationContainer>
     </>
   );
 };
