@@ -7,19 +7,12 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
+import Title from '../components/Title';
 
 function Register(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.logoContainer}>
-        <Image
-          resizeMode="contain"
-          source={require('../assests/images/Logo.png')}
-          style={styles.logo}
-          accessibilityLabel="Logo"
-        />
-        <Text style={styles.logoText}>MangaShio</Text>
-      </View>
+    <Title />
       <View style={styles.formContainer}>
         <Text style={styles.registerText}>Register</Text>
         <View style={styles.inputContainer}>
@@ -49,7 +42,9 @@ function Register(props) {
         <TouchableOpacity style={styles.registerButton}>
           <Text style={styles.registerButtonText}>Register</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.loginButton}>
+        <TouchableOpacity style={styles.loginButton}
+        // onPress={() =()}
+        >
           <Text style={styles.loginButtonText}>Login page</Text>
         </TouchableOpacity>
       </View>
@@ -60,11 +55,9 @@ export default Register;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#1f1f1f',
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'stretch',
-    justifyContent: 'center',
+    flex:1,
+    backgroundColor:'#1f1f1f',
+    justifyContent:'center',
   },
   logoContainer: {
     width: '100%',

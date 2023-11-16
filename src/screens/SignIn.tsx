@@ -8,20 +8,13 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import CheckBox from '@react-native-community/checkbox';
+import Title from '../components/Title';
 
 const SignIn = () => {
   const [checkboxIsChecked, setCheckboxIsChecked] = useState(false)
   return (
     <View style={styles.container}>
-      <View style={styles.logoContainer}>
-        <Image
-          resizeMode="contain"
-          source={require('../assests/images/Logo.png')}
-          style={styles.logo}
-          accessibilityLabel="Logo"
-        />
-        <Text style={styles.logoText}>MangaShio</Text>
-      </View>
+      <Title />
       <View style={styles.formContainer}>
         <Text style={styles.signInText}>Sign in</Text>
         <View style={styles.inputContainer}>
@@ -30,7 +23,9 @@ const SignIn = () => {
         </View>
         <View style={styles.newUserBox}>
           <Text>New user?</Text>
-          <TouchableOpacity>
+          <TouchableOpacity
+          
+          >
             <Text style={styles.registerHere}>Register here</Text>
           </TouchableOpacity>
         </View>
@@ -58,7 +53,9 @@ const SignIn = () => {
             </TouchableOpacity>
           </View>
         </View>
-        <TouchableOpacity style={styles.loginButtonContainer}>
+        <TouchableOpacity style={styles.loginButtonContainer}
+        // onPress={() =>()}
+        >
           <Text style={[styles.loginButton, styles.loginText]} >Log in</Text>
         </TouchableOpacity>
       </View>
@@ -69,29 +66,10 @@ export default SignIn;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#1f1f1f',
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'stretch',
-  },
-  logoContainer: {
-    width: '100%',
-    justifyContent: 'center',
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 20,
-    gap: 10,
-  },
-  logo: {
-    width: 49,
-    height: 49,
-  },
-  logoText: {
-    color: '#FFF',
-    fontWeight: '800',
-    fontSize: 24,
-    fontFamily: 'Roboto, sans-serif',
+    flex:1,
+    backgroundColor:'#1f1f1f',
+    justifyContent:'center',
+
   },
   formContainer: {
     borderRadius: 3,
