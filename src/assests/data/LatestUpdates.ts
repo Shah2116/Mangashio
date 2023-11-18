@@ -1,11 +1,7 @@
 
-interface PopularItem {
-  id: number;
-  image: string; // Assuming images is a string representing the image source
-  text: string;
-}
 
-const Popular_Items:PopularItem[] =[{
+
+const Latest_Updates:PopularItem[] =[{
   id: 1,
   image: require('../images/thumbnails/1.png'),
   text : "Ore no Koto ga Daikirai na Imouto ga Kowai",
@@ -22,4 +18,4 @@ const Popular_Items:PopularItem[] =[{
 }
 ]
 
-  export default Popular_Items;
+  export default Latest_Updates;

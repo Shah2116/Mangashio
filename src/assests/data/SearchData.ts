@@ -1,11 +1,3 @@
-interface SearchItem {
-  id:number,
-  title: string,
-  rating:number,
-  bookmarks: string,
-  status: string,
-  image: string,
-}
 
 const SearchItems:SearchItem[] = [
     {

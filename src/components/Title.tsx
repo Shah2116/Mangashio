@@ -24,7 +24,8 @@ container:{
     alignItems:'center'
 },
 logo:{
-
+height:49,
+width:49,
 },
 logoText:{
     color: '#fff',

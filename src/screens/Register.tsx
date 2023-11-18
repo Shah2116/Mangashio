@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import Title from '../components/Title';
 
-function Register(props) {
+function Register() {
   return (
     <View style={styles.container}>
     <Title />
