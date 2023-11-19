@@ -7,14 +7,21 @@ import Register from './screens/Register';
 import Home from './screens/Home';
 import Account from "./screens/Account";
 
-const Stack = createNativeStackNavigator();
+export type RootStackParamList ={
+   Home: undefined;
+   SignIn: undefined;
+   Register: undefined;
+}
+const Stack = createNativeStackNavigator<RootStackParamList>();
+
+
 const App = () => {
  
 
   return (
     <>
      <NavigationContainer>
-      <Stack.Navigator initialRouteName='Account'>
+      <Stack.Navigator initialRouteName='Register'>
         <Stack.Screen 
         name='SignIn'
         component={SignIn}

@@ -6,12 +6,16 @@ import {
   Text,
   View,
 } from 'react-native';
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import CheckBox from '@react-native-community/checkbox';
 import Title from '../components/Title';
 
-const SignIn = () => {
-  const [checkboxIsChecked, setCheckboxIsChecked] = useState(false)
+const SignIn = (props) => {
+  const { nevigation } = props
+  const [checkboxIsChecked, setCheckboxIsChecked] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
   return (
     <View style={styles.container}>
       <Title />
@@ -19,13 +23,16 @@ const SignIn = () => {
         <Text style={styles.signInText}>Sign in</Text>
         <View style={styles.inputContainer}>
           <Text style={styles.inputLabel}>Username/Email</Text>
-          <TextInput style={styles.input} placeholder="Enter your username" />
+          <TextInput
+            style={styles.input}
+            placeholder="Enter your username"
+            onChangeText={text => setUsername(text)}
+          />
         </View>
         <View style={styles.newUserBox}>
           <Text>New user?</Text>
           <TouchableOpacity
-          
-          >
+          onPress={() => nevigation.nevigate("Register")}>
             <Text style={styles.registerHere}>Register here</Text>
           </TouchableOpacity>
         </View>
@@ -35,6 +42,7 @@ const SignIn = () => {
           <TextInput
             style={styles.input}
             placeholder="Enter your password"
+            onChangeText={(text) =>setPassword(text)}
             secureTextEntry={true}
           />
         </View>
@@ -53,10 +61,11 @@ const SignIn = () => {
             </TouchableOpacity>
           </View>
         </View>
-        <TouchableOpacity style={styles.loginButtonContainer}
-        // onPress={() =>()}
+        <TouchableOpacity
+          style={styles.loginButtonContainer}
+          onPress={() => nevigation.nevigate('')}
         >
-          <Text style={[styles.loginButton, styles.loginText]} >Log in</Text>
+          <Text style={[styles.loginButton, styles.loginText]}>Log in</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -66,10 +75,9 @@ export default SignIn;
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
-    backgroundColor:'#1f1f1f',
-    justifyContent:'center',
-
+    flex: 1,
+    backgroundColor: '#1f1f1f',
+    justifyContent: 'center',
   },
   formContainer: {
     borderRadius: 3,
@@ -80,7 +88,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 1,
     shadowRadius: 4,
-    elevation:4,
+    elevation: 4,
     backgroundColor: '#434343',
     alignItems: 'center',
     marginVertical: 37,
@@ -128,23 +136,22 @@ const styles = StyleSheet.create({
     color: '#7daff9',
   },
   checkBoxContainer: {
-    flexDirection:'row',
-    alignItems:'center',
-   alignSelf:'flex-start',
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'flex-start',
     marginTop: 26,
   },
-  rememberme:{
-    flexDirection:'row',
-    marginLeft:18,
-    alignItems:'center'
-  
+  rememberme: {
+    flexDirection: 'row',
+    marginLeft: 18,
+    alignItems: 'center',
   },
-  loginButtonContainer:{
-    width:326,
-    height:34,
-    backgroundColor:'#002A97',
-    borderRadius:4,
-    marginTop:30,
+  loginButtonContainer: {
+    width: 326,
+    height: 34,
+    backgroundColor: '#002A97',
+    borderRadius: 4,
+    marginTop: 30,
   },
 
   loginButton: {
@@ -155,12 +162,12 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontFamily: 'Roboto, sans-serif',
   },
-  loginText:{
-    fontSize:20,
-    fontWeight:'600',
-    fontFamily:"Roboto-Bold",
-    justifyContent:'center',
-    alignItems:'center',
-    color:"#fff"
-  }
+  loginText: {
+    fontSize: 20,
+    fontWeight: '600',
+    fontFamily: 'Roboto-Bold',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: '#fff',
+  },
 });

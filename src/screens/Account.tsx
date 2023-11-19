@@ -1,5 +1,5 @@
 import {Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 import {TextInput} from 'react-native';
@@ -7,6 +7,10 @@ import {TouchableOpacity} from 'react-native';
 import {ScrollView} from 'react-native';
 
 const Account = () => {
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [changePassword, setChangePassword] = useState('')
+
   return (
     <View style={styles.mainContainer}>
       <ScrollView>
@@ -43,12 +47,14 @@ const Account = () => {
               style={styles.inputBox}
               value="email"
               placeholder="email"
+              onChangeText={(text) =>setEmail(text)}
             />
             <Text style={styles.inputLabel}>Username</Text>
             <TextInput
               style={styles.inputBox}
               value="username"
               placeholder="username"
+              onChangeText={(text) =>setUsername(text)}
             />
             <TouchableOpacity style={styles.saveBtn}>
               <Text style={styles.saveBtnText}>Save</Text>
@@ -63,6 +69,7 @@ const Account = () => {
               style={styles.inputBox}
               value="password"
               placeholder="password"
+              onChangeText={(text) =>setChangePassword(text)}
               secureTextEntry={true}
             />
             <TouchableOpacity style={styles.saveBtn}>
