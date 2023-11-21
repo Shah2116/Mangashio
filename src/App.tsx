@@ -6,6 +6,7 @@ import SignIn from './screens/SignIn';
 import Register from './screens/Register';
 import Home from './screens/Home';
 import Account from "./screens/Account";
+import Browse from "./screens/Browse";
 
 export type RootStackParamList ={
    Home: undefined;
@@ -20,7 +21,8 @@ const App = () => {
 
   return (
     <>
-     <NavigationContainer>
+    <Browse />
+     {/* <NavigationContainer>
       <Stack.Navigator initialRouteName='Register'>
         <Stack.Screen 
         name='SignIn'
@@ -50,7 +52,7 @@ const App = () => {
         }
         />
       </Stack.Navigator>
-     </NavigationContainer>
+     </NavigationContainer> */}
     </>
   );
 };
